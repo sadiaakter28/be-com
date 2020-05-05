@@ -143,7 +143,8 @@
                                     <div class="miniproduct">
                                         <div class="item01 d-flex">
                                             <div class="thumb">
-                                                <a href="product-details.html"><img src="images/product/sm-img/1.jpg" alt="product images"></a>
+                                                <a href="product-details.html"><img src="images/product/sm-img/1.jpg"
+                                                                                    alt="product images"></a>
                                             </div>
                                             <div class="content">
                                                 <h6><a href="product-details.html">Voyage Yoga Bag</a></h6>
@@ -159,7 +160,8 @@
                                         </div>
                                         <div class="item01 d-flex mt--20">
                                             <div class="thumb">
-                                                <a href="product-details.html"><img src="images/product/sm-img/3.jpg" alt="product images"></a>
+                                                <a href="product-details.html"><img src="images/product/sm-img/3.jpg"
+                                                                                    alt="product images"></a>
                                             </div>
                                             <div class="content">
                                                 <h6><a href="product-details.html">Impulse Duffle</a></h6>
@@ -175,7 +177,8 @@
                                         </div>
                                         <div class="item01 d-flex mt--20">
                                             <div class="thumb">
-                                                <a href="product-details.html"><img src="images/product/sm-img/2.jpg" alt="product images"></a>
+                                                <a href="product-details.html"><img src="images/product/sm-img/2.jpg"
+                                                                                    alt="product images"></a>
                                             </div>
                                             <div class="content">
                                                 <h6><a href="product-details.html">Compete Track Tote</a></h6>
@@ -198,73 +201,68 @@
                         </div>
                         <!-- End Shopping Cart -->
                     </li>
-                    <li class="setting__bar__icon"><a class="setting__active" href="#"></a>
-                        <div class="searchbar__content setting__block">
-                            <div class="content-inner">
-                                <div class="switcher-currency">
-                                    <strong class="label switcher-label">
-                                        <span>Currency</span>
-                                    </strong>
-                                    <div class="switcher-options">
-                                        <div class="switcher-currency-trigger">
-                                            <span class="currency-trigger">USD - US Dollar</span>
-                                            <ul class="switcher-dropdown">
-                                                <li>GBP - British Pound Sterling</li>
-                                                <li>EUR - Euro</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="switcher-currency">
-                                    <strong class="label switcher-label">
-                                        <span>Language</span>
-                                    </strong>
-                                    <div class="switcher-options">
-                                        <div class="switcher-currency-trigger">
-                                            <span class="currency-trigger">English01</span>
-                                            <ul class="switcher-dropdown">
-                                                <li>English02</li>
-                                                <li>English03</li>
-                                                <li>English04</li>
-                                                <li>English05</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="switcher-currency">
-                                    <strong class="label switcher-label">
-                                        <span>Select Store</span>
-                                    </strong>
-                                    <div class="switcher-options">
-                                        <div class="switcher-currency-trigger">
-                                            <span class="currency-trigger">Fashion Store</span>
-                                            <ul class="switcher-dropdown">
-                                                <li>Furniture</li>
-                                                <li>Shoes</li>
-                                                <li>Speaker Store</li>
-                                                <li>Furniture</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="switcher-currency">
-                                    <strong class="label switcher-label">
-                                        <span>My Account</span>
-                                    </strong>
-                                    <div class="switcher-options">
-                                        <div class="switcher-currency-trigger">
-                                            <div class="setting__menu">
-                                                <span><a href="#">Compare Product</a></span>
-                                                <span><a href="#">My Account</a></span>
-                                                <span><a href="#">My Wishlist</a></span>
-                                                <span><a href="#">Sign In</a></span>
-                                                <span><a href="#">Create An Account</a></span>
+
+                    <li class=""><a class="setting__active" href="#"></a>
+                        <ul>
+                            <!-- Authentication Links -->
+                            @guest
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                </li>
+                                @if (Route::has('registration'))
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ route('registration') }}">{{ __('Register') }}</a>
+                                    </li>
+                                @endif
+                            @else
+                                <li class="nav-item dropdown">
+                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                        {{ Auth::user()->name }} <span class="caret"></span>
+                                    </a>
+
+
+                                    <div class="searchbar__content dropdown-menu dropdown-menu-right"
+                                         aria-labelledby="navbarDropdown">
+                                        <div class=" ">
+                                            <div class="content-inner">
+                                                <div class="switcher-currency">
+                                                    <strong class="label switcher-label">
+                                                        <span>My Account</span>
+                                                    </strong>
+                                                    <div class="switcher-options">
+                                                        <div class="switcher-currency-trigger">
+                                                            <div class="setting__menu">
+                                                                <span><a href="#">Compare Product</a></span>
+                                                                <span><a href="#">My Account</a></span>
+                                                                <span><a href="#">My Wishlist</a></span>
+                                                                <span><a href="{{ route('login') }}">Sign In</a></span>
+                                                                <span><a href="{{ route('registration') }}">Create An Account</a></span>
+                                                                <span>
+                                                                                    <a class="dropdown-item"
+                                                                                       href="{{ route('logout') }}"
+                                                                                       onclick="event.preventDefault();
+                                                                                        document.getElementById('logout-form').submit();">
+                                                                                        {{ __('Logout') }}
+                                                                                    </a>
+
+                                                                                    <form id="logout-form"
+                                                                                          action="{{ route('logout') }}"
+                                                                                          style="display: none;">
+                                                                                        @csrf
+                                                                                    </form>
+                                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
+                                </li>
+                            @endguest
+                        </ul>
+
                     </li>
                 </ul>
             </div>

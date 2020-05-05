@@ -30,7 +30,7 @@
             <div class="collapse" id="products">
                 <ul class="nav flex-column sub-menu">
                     <li class="nav-item">
-                        <a class="nav-link" href="pages/ui-features/buttons.html">List</a>
+                        <a class="nav-link" href="{{route('admin.products')}}">List</a>
                     </li>
                 </ul>
             </div>
@@ -44,7 +44,7 @@
             <div class="collapse" id="categories">
                 <ul class="nav flex-column sub-menu">
                     <li class="nav-item">
-                        <a class="nav-link" href="pages/ui-features/buttons.html">List</a>
+                        <a class="nav-link" href="{{route('admin.categories')}}">List</a>
                     </li>
                 </ul>
             </div>
@@ -58,7 +58,7 @@
             <div class="collapse" id="brands">
                 <ul class="nav flex-column sub-menu">
                     <li class="nav-item">
-                        <a class="nav-link" href="pages/ui-features/buttons.html">List</a>
+                        <a class="nav-link" href="{{route('admin.brands.index')}}">List</a>
                     </li>
                 </ul>
             </div>
@@ -67,13 +67,13 @@
         <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
                 <i class="menu-icon typcn typcn-document-add"></i>
-                <span class="menu-title">User Pages</span>
+                <span class="menu-title">User</span>
                 <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="auth">
                 <ul class="nav flex-column sub-menu">
                     <li class="nav-item">
-                        <a class="nav-link" href="pages/samples/blank-page.html"> Blank Page </a>
+                        <a class="nav-link" href="{{route('admin.users')}}"> List </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="pages/samples/login.html"> Login </a>
