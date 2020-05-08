@@ -28,9 +28,9 @@
                 <div class="col-md-6">
                     <div class="my__account__wrapper">
                         <h3 class="account__title">Register</h3>
-                        <form method="POST" action="{{ route('registration.create') }}">
+                        <form method="POST" action="{{ route('registration.create') }}" method="post" class="forms-sample"
+                              enctype="multipart/form-data">
                             @csrf
-
                             <div class="account__form">
 
                                 <div class="input__box">

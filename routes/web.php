@@ -28,7 +28,7 @@ Route::group(['prefix'=>'admin', 'namespace' => 'Backend'], function (){
     //User
     Route::group(['prefix'=>'users'],function (){
         Route::get('/','UserController@index')->name('admin.users');
-        Route::get('/create', 'UserController@create')->name('admin.users.create');
+
         Route::post('/store', 'UserController@store')->name('admin.users.store');
         Route::get('/edit/{id}', 'UserController@edit')->name('admin.users.edit');
         Route::post('/update/{id}', 'UserController@update')->name('admin.users.update');
